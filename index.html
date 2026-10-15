@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Nerdy Bean Coffee Haus — Let's Brew Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0705;--amb:#ffb347;--gold:#e0a84a;--cream:#f2e4cc;--mut:#b5a287;--teal:#0f3d38;--serif:'IM Fell English',Georgia,serif;--sans:'Jost',system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--cream);font:300 17px/1.7 var(--sans);overflow-x:hidden}
+h1,h2,h3,.sf{font-family:var(--serif);font-weight:400;line-height:1.05}
+a{color:inherit;text-decoration:none}i{font-style:normal}
+section{position:relative;max-width:1200px;margin:auto;padding:110px 6vw}
+h2{font-size:clamp(36px,5.5vw,66px);margin-bottom:22px}
+p{max-width:52ch;color:#d9c8ac;margin-bottom:14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+#glow{position:fixed;inset:0;pointer-events:none;z-index:50;mix-blend-mode:screen;background:radial-gradient(circle 360px at var(--x,70%) var(--y,35%),rgba(255,170,70,.17),transparent 70%)}
+#vig{position:fixed;inset:0;pointer-events:none;z-index:55;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.65))}
+#grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:60;opacity:.08;animation:gr .8s steps(6) infinite;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes gr{20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}}
+.bar{position:fixed;left:0;right:0;height:50vh;background:#000;z-index:100;pointer-events:none;animation:bt 1.9s .5s cubic-bezier(.7,0,.2,1) forwards}
+.bar.t{top:0}.bar.b{bottom:0;animation-name:bb}
+@keyframes bt{to{transform:translateY(-101%)}}@keyframes bb{to{transform:translateY(101%)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 34px;background:linear-gradient(#0b0705f0,#0b070500)}
+nav b{font:400 26px var(--serif);color:var(--gold)}nav div a{margin-left:26px;font-size:15px;opacity:.8;transition:.3s}nav div a:hover{opacity:1;color:var(--amb)}
+#hero{max-width:none;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:120px 6vw 90px;background:radial-gradient(ellipse 55% 55% at 72% 50%,#4a2a10,transparent 70%),radial-gradient(ellipse 45% 45% at 0 0,#0f3d38b0,transparent 70%)}
+#fx{position:absolute;inset:0;width:100%;height:100%}
+.bk{position:absolute;border-radius:50%;filter:blur(6px);background:radial-gradient(circle,rgba(255,179,71,.22),rgba(255,179,71,.04) 60%,transparent 70%);animation:bk 12s ease-in-out infinite alternate}
+@keyframes bk{to{transform:translate(40px,-60px) scale(1.3);opacity:.4}}
+.hw{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:4vw;align-items:center;width:100%;max-width:1200px}
+.a{animation:up 1.4s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(1.3s + var(--i)*.15s)}
+@keyframes up{from{opacity:0;transform:translateY(40px);filter:blur(12px)}}
+.lg{width:112px;height:112px;margin-bottom:8px;overflow:visible}
+.lg path,.lg circle{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 2.6s 1.2s ease forwards}
+.lg circle:nth-child(2){opacity:.4;stroke-width:2}
+.lt{opacity:0;animation:fi 1.5s 2.8s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}@keyframes fi{to{opacity:1}}
+.pill{display:inline-block;padding:7px 18px;border:1px solid #e0a84a66;border-radius:99px;background:#0f3d3888;font-size:14px;margin-bottom:20px}
+h1{font-size:clamp(64px,11vw,140px);text-shadow:0 0 70px #ffb34744}
+.ch{font:italic 400 clamp(30px,4.5vw,54px)/1 var(--serif);color:var(--gold);margin:6px 0 26px}
+.tag{font:italic 400 clamp(22px,2.6vw,30px)/1.3 var(--serif);color:var(--cream);margin-bottom:34px}
+.btn{display:inline-block;padding:13px 28px;margin:0 10px 12px 0;border:1px solid var(--amb);border-radius:99px;color:var(--amb);font-size:15px;transition:.4s}
+.btn:hover,.btn.f{background:var(--amb);color:#1b0f06}.btn:hover{box-shadow:0 0 34px #ffb34790}
+.cupw svg{display:block;width:100%;max-width:440px;margin:auto;animation:fl2 7s ease-in-out infinite}
+@keyframes fl2{50%{transform:translateY(-10px)}}
+.halo,.lamp{animation:fk 5s infinite}
+@keyframes fk{0%,100%{opacity:1}47%{opacity:.9}50%{opacity:.62}53%{opacity:.95}72%{opacity:.8}}
+.st path{transform-box:fill-box;transform-origin:50% 100%;animation:st 4.5s ease-in-out infinite}
+.st path:nth-child(2){animation-delay:1.3s}.st path:nth-child(3){animation-delay:2.6s}
+@keyframes st{0%{opacity:0;transform:translateY(24px) scaleY(.8)}40%{opacity:.75}100%{opacity:0;transform:translateY(-34px) scaleY(1.25)}}
+.cue{position:absolute;bottom:24px;left:50%;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);transform-origin:top;animation:cue 2.2s infinite}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.mq{overflow:hidden;white-space:nowrap;border-block:1px solid #e0a84a33;padding:20px 0;font:italic 400 clamp(26px,4vw,44px) var(--serif);color:var(--gold);background:#0f3d3855}
+.mq div{display:inline-block;animation:mq 38s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.bean{display:inline-block;width:.42em;height:.3em;border-radius:50%;background:var(--gold);margin:0 .9em;transform:rotate(-30deg);position:relative;vertical-align:middle}
+.bean:after{content:"";position:absolute;left:10%;right:10%;top:46%;height:1px;background:var(--bg)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
+.sw{position:relative}
+.lamp{position:absolute;top:-40px;left:50%;width:90%;height:115%;transform:translateX(-50%);pointer-events:none;mix-blend-mode:screen;background:radial-gradient(ellipse at 50% 0,rgba(255,179,71,.38),transparent 65%)}
+#shelf{padding:28px 18px 0;background:linear-gradient(#1a0f08,#0f0805);border:1px solid #e0a84a33;border-radius:6px 6px 0 0;box-shadow:inset 0 0 80px #000,0 30px 90px #ffb3471f}
+.row{display:flex;align-items:flex-end;gap:2px;height:150px;overflow:hidden;border-bottom:10px solid #3b2412;padding:0 6px}
+.row i{flex:none;width:var(--w);height:var(--h);border-radius:2px 2px 0 0;transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.9,.3,1.2) calc(var(--k)*28ms);background:linear-gradient(transparent 20%,#e0a84a99 20%,#e0a84a99 24%,transparent 24%),linear-gradient(90deg,#0006,transparent 30%,#ffffff1f 55%,#0007),var(--c)}
+.in #shelf .row i,.sw.in .row i{transform:none}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:70px}
+.fc{border:1px solid #e0a84a33;border-radius:4px;padding:26px;background:linear-gradient(160deg,#1a110b,#0e0805)}
+.fc h3{font-size:34px;color:var(--gold);margin-bottom:6px}.fc p{font-size:15px;margin:0;color:var(--mut)}
+.board{background:repeating-linear-gradient(115deg,#ffffff05 0 2px,transparent 2px 6px),linear-gradient(#17120f,#0f0b09);border:1px solid #e0a84a44;border-radius:8px;padding:clamp(18px,4vw,44px);box-shadow:0 40px 100px #000a,inset 0 0 120px #000}
+#tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;scrollbar-width:none}
+#tabs button{font:400 15px var(--sans);color:var(--mut);background:none;border:1px solid #e0a84a33;border-radius:99px;padding:9px 20px;cursor:pointer;white-space:nowrap;transition:.4s}
+#tabs button:focus-visible,.btn:focus-visible{outline:2px solid var(--amb);outline-offset:3px}
+#tabs .on{color:#1b0f06;background:var(--amb);border-color:var(--amb);box-shadow:0 0 24px #ffb34766}
+.it,.sh{display:flex;align-items:center;gap:12px;animation:up .7s both;animation-delay:calc(var(--i)*40ms)}
+.it{padding:11px 0}.it b{font:400 23px/1.2 var(--serif)}
+.it small{display:block;max-width:420px;font-size:13px;line-height:1.4;color:var(--mut)}
+.sh{margin:24px 0 4px;font-size:14px;color:var(--gold)}
+.dots{flex:1;min-width:12px;border-top:1px dotted #e0a84a55}
+.p{min-width:62px;text-align:right;font-weight:400;color:var(--amb)}.sh .p{color:var(--gold)}
+.flav{margin-top:26px;background:linear-gradient(90deg,var(--teal),#14574d);border-radius:6px;padding:24px 28px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center}
+.flav h3{font-size:30px;margin-right:auto}.flav b{color:var(--amb);font-weight:500;margin-left:8px}
+.vg{display:grid;grid-template-columns:1fr 1fr;gap:5vw}
+dt{color:var(--gold);font-size:14px;margin-top:18px}dd{font-size:19px;margin-bottom:6px}dd a{border-bottom:1px solid #e0a84a66}
+.vg>div>a:first-of-type{margin-top:24px}
+.hp{border:1px solid #e0a84a44;border-radius:8px;padding:30px;background:linear-gradient(160deg,#1a110b,#0e0805)}
+.hh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.hh h3{font-size:34px}
+#st{font-size:14px;display:flex;align-items:center;gap:8px;color:var(--amb)}
+#st i{width:9px;height:9px;border-radius:50%;background:var(--amb);box-shadow:0 0 12px var(--amb);animation:fk 2s infinite}
+#hrs{list-style:none}#hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e0a84a1f}
+#hrs .today{color:var(--amb)}.nt{font-size:14px;color:var(--mut);margin:16px 0 0}
+footer{text-align:center;padding:90px 6vw 60px;background:radial-gradient(ellipse at 50% 100%,var(--teal),transparent 70%)}
+.sf{font-size:clamp(34px,6vw,70px);color:var(--gold);font-style:italic}footer p{margin:14px auto 0;color:var(--mut)}
+@media(max-width:800px){.hw,.g2,.vg{grid-template-columns:1fr}nav div a:first-child{display:none}.cupw{order:-1;max-width:300px;margin:auto}section{padding:80px 6vw}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.bar{display:none}}
+</style></head><body>
+<div class="bar t"></div><div class="bar b"></div><div id="glow"></div><div id="vig"></div><div id="grain"></div>
+<nav><b>Nerdy Bean</b><div><a href="#story">Story</a><a href="#menu">Menu</a><a href="#visit">Visit</a></div></nav>
+
+<section id="hero"><canvas id="fx"></canvas>
+<div class="hw">
+<div>
+<svg class="lg a" style="--i:0" viewBox="0 0 200 200" aria-label="Nerdy Bean logo"><circle cx="100" cy="100" r="90" pathLength="1"/><circle cx="103" cy="98" r="83" pathLength="1"/><path pathLength="1" d="M62 70c8-26 46-34 78-10"/><circle cx="74" cy="90" r="19" pathLength="1"/><circle cx="126" cy="90" r="19" pathLength="1"/><path pathLength="1" d="M93 88q7-6 14 0"/><text class="lt" x="100" y="124" text-anchor="middle" font-family="Jost,sans-serif" font-size="11" letter-spacing="5" fill="#e0a84a">NERDY</text><text class="lt" x="100" y="156" text-anchor="middle" font-family="IM Fell English,Georgia,serif" font-style="italic" font-size="38" fill="#e0a84a">Bean</text></svg>
+<div class="pill a" style="--i:1">Now open in a new location</div>
+<h1 class="a" style="--i:2">Nerdy Bean</h1>
+<div class="ch a" style="--i:3">Coffee Haus</div>
+<p class="tag a" style="--i:4">Let's brew stories, once again…</p>
+<div class="a" style="--i:5"><a class="btn f" href="#menu">See the menu</a><a class="btn" href="#visit">Find us</a></div>
+</div>
+<div class="cupw a" style="--i:3"><svg viewBox="0 0 300 320" aria-label="A steaming cup of latte"><defs><radialGradient id="gl"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient><linearGradient id="pc"><stop offset="0" stop-color="#cdb9a0"/><stop offset=".45" stop-color="#fbf1e0"/><stop offset="1" stop-color="#9c8670"/></linearGradient><radialGradient id="cf"><stop offset="0" stop-color="#c98a4b"/><stop offset="1" stop-color="#5a3016"/></radialGradient><filter id="bl"><feGaussianBlur stdDeviation="5"/></filter></defs>
+<circle class="halo" cx="150" cy="190" r="150" fill="url(#gl)"/>
+<ellipse cx="150" cy="268" rx="125" ry="26" fill="url(#pc)"/><ellipse cx="150" cy="262" rx="78" ry="14" fill="#8a7560" opacity=".5"/>
+<path d="M62 150h176c0 62-30 108-88 108S62 212 62 150z" fill="url(#pc)"/><path d="M236 168c42-8 46 38 8 52" fill="none" stroke="#e8d8bf" stroke-width="12" stroke-linecap="round"/>
+<ellipse cx="150" cy="150" rx="88" ry="22" fill="#efe0c8"/><ellipse cx="150" cy="152" rx="76" ry="17" fill="url(#cf)"/>
+<path d="M150 166C130 154 126 143 133 139C140 135 147 140 150 146C153 140 160 135 167 139C174 143 170 154 150 166Z" fill="#f6e7cf" opacity=".92"/>
+<g class="st" filter="url(#bl)" fill="none" stroke="#f2e4cc" stroke-width="7" stroke-linecap="round" opacity=".6"><path d="M120 120c-18-22 18-34 0-60"/><path d="M150 112c-18-22 18-40 0-70"/><path d="M180 120c-18-22 18-34 0-58"/></g></svg></div>
+</div><div class="cue"></div></section>
+
+<div class="mq"><div id="mq"><span>Let's brew stories</span><i class="bean"></i><span>Once again</span><i class="bean"></i><span>Now open in a new location</span><i class="bean"></i></div></div>
+
+<section id="story"><div class="g2">
+<div class="rv"><h2>A library you can order coffee in</h2>
+<p>Nerdy Bean Coffee Haus is the first library plus coffee house in Bangladesh, a lifestyle coffee shop famed for its cool vintage interior.</p>
+<p>Pull a book from the shelf, order something warm, and stay a while. Every cup has a story, and the shelves are full of them.</p></div>
+<div class="sw rv"><div class="lamp"></div><div id="shelf"></div></div></div>
+<div class="facts rv">
+<div class="fc"><h3>8 AM – 12 AM</h3><p>Open every day</p></div>
+<div class="fc"><h3>৳200–400</h3><p>Per person, reported by 45 people</p></div>
+<div class="fc"><h3>Dine-in</h3><p>Or drive through</p></div>
+<div class="fc"><h3>foodpanda</h3><p>Order for delivery</p></div></div></section>
+
+<section id="menu"><h2 class="rv">The menu</h2><p class="rv">Prices in taka (৳). Hot or iced drinks come in Tall and Grande.</p>
+<div class="board rv"><div id="tabs" role="tablist"></div><div id="list"></div></div>
+<div class="flav rv"><h3>Add a flavour</h3><div id="fl" style="display:contents"></div></div></section>
+
+<section id="visit"><h2 class="rv">Come and stay a while</h2><div class="vg">
+<div class="rv"><dl><dt>Find us</dt><dd>2nd floor, Navana Meher Skylark<br>House 39/B, Road 14/A, Satmasjid Road<br>Dhanmondi, Dhaka 1205</dd>
+<dt>Call</dt><dd><a href="tel:01707771277">01707-771277</a></dd>
+<dt>Dining</dt><dd>Dine-in and drive-through</dd></dl>
+<a class="btn f" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nerdy+Bean+Coffee+House+Satmasjid+Road+Dhanmondi">Get directions</a><a class="btn" target="_blank" rel="noopener" href="https://www.foodpanda.com.bd">Order on foodpanda</a><a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/search/top?q=Nerdy%20Bean%20Coffee%20Haus">Facebook, 59K followers</a></div>
+<div class="hp rv"><div class="hh"><h3>Opening hours</h3><span id="st"><i></i><span id="stt"></span></span></div><ul id="hrs"></ul><p class="nt">Same hours every day. Holiday hours, such as Vijayadashami and Durga Puja, might differ.</p></div></div></section>
+
+<footer><div class="sf">Let's brew stories.</div><p>Nerdy Bean Coffee Haus, the first library plus coffee house in Bangladesh.</p></footer>
+
+<script>
+const $=s=>document.querySelector(s),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const M={
+"Espresso":["#Espresso, hot or iced|Tall|Grande","Cappuccino|220|320","Cafe Latte|220|320","Flavoured Latte|310|410","Americano|180|280","Cafe Mocha|320|420","Flavoured Mocha|360|460","White Mocha|320|420","Caramel Macchiato|280|380","Salted Caramel Mocha|380|480","#Shots|Single|Double","Espresso|160|260","Macchiato|180|280"],
+"Chocolate":["#Hot chocolate|Tall|Grande","Dark Chocolate|250|350","White Chocolate|250|350","Nerdy Special|340|480","Italian Hot Chocolate|380|480"],
+"Tea":["#Tea|Tall|Grande","Hot Tea|150|250|Earl Grey, Chamomile, Green Tea or English Breakfast","Iced Lemon Tea|250|350"],
+"Frappuccino":["#Frappuccino|Tall|Grande","Mocha Frappe|390|490","White Mocha Frappe|390|490","Flavored Mocha Frappe|410|510","Salted Caramel Mocha|410|510","Mocha Cookie Crumb|420|520","Salted Caramel Latte|360|460","Nerdy Special Frappe|420|520"],
+"Shakes":["#Shakes|Tall|Grande","Oreo Cream Cheese|420|540","Cookies and Cream|380|490","Strawberry Buttercream|520|650","Red Velvet|520|650","Blueberry Cream Cheese|520|650","Cotton Candy|520|650"],
+"Coolers":["#Smoothies|Tall|Grande","Smoothie|490|590|Blueberry, Raspberry, Mango, Passion Fruit or Strawberry","#Soda or lemonade|Tall|Grande","Soda or Lemonade|380|480|Blueberry, Raspberry, Mango, Passion Fruit or Strawberry","Mint Mojito|250|350"],
+"Brunch":["#Breakfast and brunch|Price","Full English|530|Egg, 2 sausages, bacon, beans, mushrooms, butter and toast","Veggie Breakfast|420|Egg, beans, mushrooms, hashbrowns and toast","Peckish|550|2 sausages, 2 scrambled eggs, fries, 2 hashbrowns, mushrooms and toast","Scrambled Eggs with Sausages|350|Served with toast, butter and beans","Mushroom Eggs Omelette|350|Served with beans, butter and toast","Cheese Omelette|350|Served with beans, butter and toast","French Toast|320|Served with whipped cream and maple syrup"],
+"Sandwiches":["#Sandwiches|Price","Smoked Chicken Sandwich|360","BBQ Chicken Sandwich|380","Grilled Sausages Sandwich|340","Grilled Cheese Sandwich|320","Hunter Beef Sandwich|420","Beef Pastrami Sandwich|420","Tuna Salsa Sandwich|460"],
+"Savoury":["#Savoury|Price","French Fries|250","Potato Wedges|250","Chicken Strips|280","Snack Box|370|Sausages, chicken strips and fries topped with cheese and house special mayo"]};
+const tb=$('#tabs'),ls=$('#list');
+function show(k){[...tb.children].forEach(b=>b.classList.toggle('on',b.textContent===k));
+ls.innerHTML=M[k].map((l,i)=>{const[n,...r]=l.split('|');
+if(n[0]==='#')return`<div class="sh" style="--i:${i}"><span>${n.slice(1)}</span><i class="dots"></i>${r.map(c=>`<span class="p">${c}</span>`).join('')}</div>`;
+const pr=r.filter(x=>/^\d+$/.test(x)),nt=r.find(x=>!/^\d+$/.test(x));
+return`<div class="it" style="--i:${i}"><div><b>${n}</b>${nt?`<small>${nt}</small>`:''}</div><i class="dots"></i>${pr.map(x=>`<span class="p">৳${x}</span>`).join('')}</div>`}).join('')}
+Object.keys(M).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>show(k);tb.append(b)});show('Espresso');
+$('#fl').innerHTML=[["Hazelnut",60],["Caramel",60],["Vanilla",60],["White Chocolate",100],["Dark Chocolate",100],["Espresso Shot",100]].map(([n,p])=>`<span>${n}<b>+৳${p}</b></span>`).join('');
+// bookshelf
+const cols=['#5b2a1a','#16524a','#7a4a1d','#2a1a12','#8a2f26','#0f3d38','#a8742f','#3c2a4a'];
+for(let r=0;r<3;r++){const row=document.createElement('div');row.className='row';
+for(let i=0;i<24;i++){const b=document.createElement('i');b.style.cssText=`--w:${14+Math.random()*16|0}px;--h:${80+Math.random()*62|0}px;--c:${cols[Math.random()*8|0]};--k:${r*8+i}`;row.append(b)}$('#shelf').append(row)}
+// opening hours, Dhaka time
+const f=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Dhaka',weekday:'long',hour:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+const day=f.find(p=>p.type==='weekday').value,hr=+f.find(p=>p.type==='hour').value;
+$('#hrs').innerHTML=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(d=>`<li class="${d===day?'today':''}"><span>${d}</span><span>8 AM – 12 AM</span></li>`).join('');
+$('#stt').textContent=hr>=8?'Open now':'Closed right now';
+// marquee, reveal, lamp-light, parallax
+$('#mq').innerHTML+=$('#mq').innerHTML;
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+addEventListener('pointermove',e=>{const g=$('#glow').style;g.setProperty('--x',e.clientX+'px');g.setProperty('--y',e.clientY+'px')});
+const hw=$('.hw');addEventListener('scroll',()=>{const y=scrollY,h=innerHeight;if(y<h*1.2){hw.style.transform=`translateY(${y*.2}px)`;hw.style.opacity=Math.max(0,1-y/(h*.9))}},{passive:true});
+// embers and bokeh
+if(!rm){for(let i=0;i<7;i++){const b=document.createElement('div'),s=60+Math.random()*140;b.className='bk';b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${-Math.random()*12}s;animation-duration:${10+Math.random()*10}s`;$('#hero').prepend(b)}
+const cv=$('#fx'),cx=cv.getContext('2d');let W,H;const P=[];
+const rs=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight};rs();addEventListener('resize',rs);
+for(let i=0;i<80;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*2+.4,v:Math.random()*.0006+.0001,p:Math.random()*6,a:Math.random()*.6+.2});
+(function dr(t){cx.clearRect(0,0,W,H);cx.globalCompositeOperation='lighter';
+for(const p of P){p.y-=p.v*16;if(p.y<-.05){p.y=1.05;p.x=Math.random()}
+const x=(p.x+Math.sin(t/1800+p.p)*.02)*W,y=p.y*H,tw=.5+.5*Math.sin(t/400+p.p),g=cx.createRadialGradient(x,y,0,x,y,p.r*5);
+g.addColorStop(0,`rgba(255,190,100,${p.a*tw})`);g.addColorStop(1,'rgba(255,150,50,0)');cx.fillStyle=g;cx.beginPath();cx.arc(x,y,p.r*5,0,7);cx.fill()}
+requestAnimationFrame(dr)})(0)}
+</script></body></html>
